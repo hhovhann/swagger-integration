@@ -6,6 +6,7 @@ import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springdoc.core.GroupedOpenApi;
+import org.springdoc.core.customizers.OpenApiCustomiser;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,11 +16,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class OpenApiConfig implements WebMvcConfigurer {
     @Bean
     public GroupedOpenApi userOpenApi() {
-        String packagesToScan[] = {"com.hhovhann.swaggerintegration.controller.Api", "com.hhovhann.swaggerintegration.controller.FileController", "com.hhovhann.swaggerintegration.controller.TestApi"};
         return GroupedOpenApi.builder()
                 .group("sec")
-                .packagesToScan(packagesToScan)
-//                .pathsToMatch("**/sec/api/**")
+                .packagesToScan("com.hhovhann.swaggerintegration.controller.api")
                 .build();
     }
 

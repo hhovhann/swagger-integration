@@ -1,4 +1,4 @@
-package com.hhovhann.swaggerintegration.controller;
+package com.hhovhann.swaggerintegration.controller.api;
 
 import com.hhovhann.swaggerintegration.domain.PhoneStartCheck;
 import lombok.extern.slf4j.Slf4j;
